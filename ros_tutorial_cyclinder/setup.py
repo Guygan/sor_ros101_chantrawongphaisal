@@ -24,8 +24,9 @@ setup(
     entry_points={
         'console_scripts': [
             'cylinder_input = ros_tutorial_cyclinder.cylinder_input:main',
-            'cylinder_subscriber = ros_tutorial_cyclinder.cylinder_subscriber:main',
+            'cylinder_squared = ros_tutorial_cyclinder.cylinder_subscriber:main',
             'cylinder_volume = ros_tutorial_cyclinder.cylinder_volume:main',
+            'cylinder_weight = ros_tutorial_cyclinder.cylinder_weight:main',
         ],
     },
 )

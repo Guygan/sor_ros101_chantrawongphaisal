@@ -6,13 +6,13 @@ from std_msgs.msg import Float64, Float64MultiArray  # <-- เพิ่ม Float
 
 class CylinderSubscriberNode(Node):
     def __init__(self):
-        super().__init__('cylinder_subscriber')
+        super().__init__('cylinder_squared')
 
         self.area_pub = self.create_publisher(Float64, '/radius_squared', 10)
 
         self.radius_sub = self.create_subscription(
-            Float64MultiArray,     # ต้องเป็นชนิดนี้ ถ้ารับจาก 'cylinder_dimensions'
-            'cylinder_dimensions',
+            Float64MultiArray,     # ต้องเป็นชนิดนี้ ถ้ารับจาก 'cylinder_properties'
+            'cylinder_properties',
             self.radius_callback,
             10)
 
