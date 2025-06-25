@@ -1,0 +1,37 @@
+[1.721s] Invoking command in '/home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/ros_101_turtlesim build --build-base /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build install --record /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/install.log --single-version-externally-managed install_data
+[2.378s] running egg_info
+[2.378s] creating build/ros_101_turtlesim/ros_101_turtlesim.egg-info
+[2.435s] writing build/ros_101_turtlesim/ros_101_turtlesim.egg-info/PKG-INFO
+[2.435s] writing dependency_links to build/ros_101_turtlesim/ros_101_turtlesim.egg-info/dependency_links.txt
+[2.439s] writing entry points to build/ros_101_turtlesim/ros_101_turtlesim.egg-info/entry_points.txt
+[2.439s] writing requirements to build/ros_101_turtlesim/ros_101_turtlesim.egg-info/requires.txt
+[2.440s] writing top-level names to build/ros_101_turtlesim/ros_101_turtlesim.egg-info/top_level.txt
+[2.440s] writing manifest file 'build/ros_101_turtlesim/ros_101_turtlesim.egg-info/SOURCES.txt'
+[2.615s] reading manifest file 'build/ros_101_turtlesim/ros_101_turtlesim.egg-info/SOURCES.txt'
+[2.615s] writing manifest file 'build/ros_101_turtlesim/ros_101_turtlesim.egg-info/SOURCES.txt'
+[2.624s] running build
+[2.624s] running build_py
+[2.625s] creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build
+[2.627s] creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib
+[2.627s] creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim
+[2.627s] copying ros_101_turtlesim/square_turtle.py -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim
+[2.627s] copying ros_101_turtlesim/__init__.py -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim
+[2.628s] running install
+[2.643s] running install_lib
+[2.727s] creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim
+[2.727s] copying /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim/square_turtle.py -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim
+[2.728s] copying /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim/__init__.py -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim
+[2.734s] byte-compiling /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim/square_turtle.py to square_turtle.cpython-312.pyc
+[2.737s] byte-compiling /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim/__init__.py to __init__.cpython-312.pyc
+[2.738s] running install_data
+[2.738s] creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ament_index
+[2.741s] creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ament_index/resource_index
+[2.742s] creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ament_index/resource_index/packages
+[2.742s] copying resource/ros_101_turtlesim -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ament_index/resource_index/packages
+[2.745s] copying package.xml -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ros_101_turtlesim
+[2.745s] running install_egg_info
+[2.822s] Copying build/ros_101_turtlesim/ros_101_turtlesim.egg-info to /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim-0.0.0-py3.12.egg-info
+[2.822s] running install_scripts
+[3.213s] Installing turtle_square script to /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/ros_101_turtlesim
+[3.215s] writing list of installed files to '/home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/install.log'
+[3.308s] Invoked command in '/home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/ros_101_turtlesim build --build-base /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build install --record /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/install.log --single-version-externally-managed install_data

@@ -1,0 +1,35 @@
+running egg_info
+creating build/ros_101_turtlesim/ros_101_turtlesim.egg-info
+writing build/ros_101_turtlesim/ros_101_turtlesim.egg-info/PKG-INFO
+writing dependency_links to build/ros_101_turtlesim/ros_101_turtlesim.egg-info/dependency_links.txt
+writing entry points to build/ros_101_turtlesim/ros_101_turtlesim.egg-info/entry_points.txt
+writing requirements to build/ros_101_turtlesim/ros_101_turtlesim.egg-info/requires.txt
+writing top-level names to build/ros_101_turtlesim/ros_101_turtlesim.egg-info/top_level.txt
+writing manifest file 'build/ros_101_turtlesim/ros_101_turtlesim.egg-info/SOURCES.txt'
+reading manifest file 'build/ros_101_turtlesim/ros_101_turtlesim.egg-info/SOURCES.txt'
+writing manifest file 'build/ros_101_turtlesim/ros_101_turtlesim.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build
+creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib
+creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim
+copying ros_101_turtlesim/square_turtle.py -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim
+copying ros_101_turtlesim/__init__.py -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim
+running install
+running install_lib
+creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim
+copying /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim/square_turtle.py -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim
+copying /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/build/lib/ros_101_turtlesim/__init__.py -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim
+byte-compiling /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim/square_turtle.py to square_turtle.cpython-312.pyc
+byte-compiling /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ament_index
+creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ament_index/resource_index
+creating /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ament_index/resource_index/packages
+copying resource/ros_101_turtlesim -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ament_index/resource_index/packages
+copying package.xml -> /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/share/ros_101_turtlesim
+running install_egg_info
+Copying build/ros_101_turtlesim/ros_101_turtlesim.egg-info to /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/python3.12/site-packages/ros_101_turtlesim-0.0.0-py3.12.egg-info
+running install_scripts
+Installing turtle_square script to /home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/install/ros_101_turtlesim/lib/ros_101_turtlesim
+writing list of installed files to '/home/guygan/ros2_ws/src/sor_ros101_chantrawongphaisal/ros_101_turtlesim/build/ros_101_turtlesim/install.log'
