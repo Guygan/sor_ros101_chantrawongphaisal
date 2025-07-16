@@ -1,0 +1,38 @@
+[1.479s] Invoking command in '/home/guygan/ros2_ws/src/my_robot_description': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/my_robot_description build --build-base /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/build install --record /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/install.log --single-version-externally-managed install_data
+[1.926s] running egg_info
+[1.926s] creating build/my_robot_description/my_robot_description.egg-info
+[1.959s] writing build/my_robot_description/my_robot_description.egg-info/PKG-INFO
+[1.959s] writing dependency_links to build/my_robot_description/my_robot_description.egg-info/dependency_links.txt
+[1.960s] writing requirements to build/my_robot_description/my_robot_description.egg-info/requires.txt
+[1.960s] writing top-level names to build/my_robot_description/my_robot_description.egg-info/top_level.txt
+[1.960s] writing manifest file 'build/my_robot_description/my_robot_description.egg-info/SOURCES.txt'
+[2.032s] reading manifest file 'build/my_robot_description/my_robot_description.egg-info/SOURCES.txt'
+[2.033s] writing manifest file 'build/my_robot_description/my_robot_description.egg-info/SOURCES.txt'
+[2.033s] running build
+[2.034s] running build_py
+[2.034s] creating /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/build
+[2.034s] creating /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/build/lib
+[2.035s] creating /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/build/lib/my_robot_description
+[2.035s] copying my_robot_description/__init__.py -> /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/build/lib/my_robot_description
+[2.035s] running install
+[2.045s] running install_lib
+[2.086s] creating /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/lib/python3.12/site-packages/my_robot_description
+[2.086s] copying /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/build/lib/my_robot_description/__init__.py -> /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/lib/python3.12/site-packages/my_robot_description
+[2.087s] byte-compiling /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/lib/python3.12/site-packages/my_robot_description/__init__.py to __init__.cpython-312.pyc
+[2.087s] running install_data
+[2.087s] creating /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/ament_index
+[2.087s] creating /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/ament_index/resource_index
+[2.088s] creating /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/ament_index/resource_index/packages
+[2.088s] copying resource/my_robot_description -> /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/ament_index/resource_index/packages
+[2.088s] copying package.xml -> /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/my_robot_description
+[2.088s] creating /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/my_robot_description/launch
+[2.088s] copying launch/display.launch.py -> /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/my_robot_description/launch
+[2.088s] creating /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/my_robot_description/urdf
+[2.089s] copying urdf/my_robot.urdf.xacro -> /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/my_robot_description/urdf
+[2.089s] creating /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/my_robot_description/rviz
+[2.089s] copying rviz/urdf_config.rviz -> /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/share/my_robot_description/rviz
+[2.089s] running install_egg_info
+[2.130s] Copying build/my_robot_description/my_robot_description.egg-info to /home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/lib/python3.12/site-packages/my_robot_description-0.0.0-py3.12.egg-info
+[2.131s] running install_scripts
+[2.351s] writing list of installed files to '/home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/install.log'
+[2.399s] Invoked command in '/home/guygan/ros2_ws/src/my_robot_description' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guygan/ros2_ws/src/my_robot_description/install/my_robot_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/my_robot_description build --build-base /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/build install --record /home/guygan/ros2_ws/src/my_robot_description/build/my_robot_description/install.log --single-version-externally-managed install_data

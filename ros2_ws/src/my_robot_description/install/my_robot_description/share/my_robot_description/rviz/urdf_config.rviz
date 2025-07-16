@@ -1,0 +1,78 @@
+Panels:
+  - Class: rviz_default_plugins/Displays
+    Expanded:
+      - /Global Options1
+      - /Status1
+      - /RobotModel1
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /RobotModel1
+      Properties:
+        - class_id: rviz_default_plugins/GlobalOptions
+          collapsed: false
+          Grid:
+            Alpha: 0.5
+            Color: 160; 160; 160
+            Grid Cell Size: 1
+            Line Style:
+              Line Width: 0.03
+              Value: Lines
+            Name: Grid
+            Normal Cell Count: 0
+            Offset X: 0
+            Offset Y: 0
+            Offset Z: 0
+            Plane: XY
+            Renderable: true
+            Value: true
+          Name: Global Options
+          RobotModel:
+            Alpha: 1
+            Collision Enabled: false
+            Description Source: Topic
+            Description Topic: robot_description
+            Mass Properties: false
+            Name: RobotModel
+            TF Prefix: ""
+            Update Interval: 0
+            Value: true
+            Visual Enabled: true
+          Fixed Frame: base_link  # ตรวจสอบว่าตรงกับชื่อ link ใน URDF
+          Background Color: 48; 48; 48
+          Frame Rate: 30
+          Global Status:
+            Display:
+              Value: Ok
+          Name: Displays
+          Show Desc:
+            Value: true
+          Target Frame: <Fixed Frame>
+          Value: true
+    Selected:
+      - Global Options
+    Tree Height: 200
+Time:
+  Link Display: 0.08
+  Offset: 0
+  Topic: /clock
+  Value: 1751620311.018315564
+Views:
+  Current:
+    Class: rviz_default_plugins/Orbit
+    Distance: 2
+    Enable Stereo:
+      Stereo System: false
+      Value: false
+    Focal Point: 0; 0; 0
+    Focal Shape Fixed Size: true
+    Focal Shape Size: 0.05
+    Invert Z Axis: false
+    Name: Current View
+    Near Clip: 0.01
+    Pitch: 0.5
+    Target Frame: <Fixed Frame>
+    Value: Orbit (rviz)
+    Yaw: 0
+  Saved: ~

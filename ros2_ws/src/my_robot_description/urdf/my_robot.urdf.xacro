@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="my_robot">
+
+  <xacro:property name="platform_length" value="0.5"/>
+  <xacro:property name="platform_width" value="0.5"/>
+  <xacro:property name="platform_thickness" value="0.01"/>
+  <xacro:property name="body_length" value="0.5"/>
+  <xacro:property name="body_width" value="0.3"/>
+  <xacro:property name="body_height" value="0.1"/>
+
+  <xacro:property name="track_length" value="0.5"/>
+  <xacro:property name="track_width" value="0.1"/>
+  <xacro:property name="track_height" value="0.15"/>
+
+  <link name="base_link">
+  </link>
+
+  <link name="bottom_plate">
+    <visual>
+      <geometry>
+        <box size="${platform_length} ${platform_width} ${platform_thickness}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="yellow">
+        <color rgba="1.0 1.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_bottom" type="fixed">
+    <parent link="base_link"/>
+    <child link="bottom_plate"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="main_body">
+    <visual>
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="yellow"/>
+    </visual>
+  </link>
+
+  <joint name="bottom_to_body" type="fixed">
+    <parent link="bottom_plate"/>
+    <child link="main_body"/>
+    <origin xyz="0 0 ${platform_thickness/2 + body_height/2}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="top_plate">
+    <visual>
+      <geometry>
+        <box size="${platform_length} ${platform_width} ${platform_thickness}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="yellow"/>
+    </visual>
+  </link>
+
+  <joint name="body_to_top" type="fixed">
+    <parent link="main_body"/>
+    <child link="top_plate"/>
+    <origin xyz="0 0 ${body_height/2 + platform_thickness/2}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="left_track">
+    <visual>
+      <geometry>
+        <box size="${track_length} ${track_width} ${track_height}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_track" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_track"/>
+    <origin xyz="0 ${platform_width/2 + 0.01 - track_width/2} ${-platform_thickness/2 - track_height/2}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_track">
+    <visual>
+      <geometry>
+        <box size="${track_length} ${track_width} ${track_height}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_right_track" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_track"/>
+    <origin xyz="0 ${-(platform_width/2 + 0.01 - track_width/2)} ${-platform_thickness/2 - track_height/2}" rpy="0 0 0"/>
+  </joint>
+
+</robot>
