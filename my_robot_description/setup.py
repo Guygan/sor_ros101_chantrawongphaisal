@@ -1,13 +1,13 @@
 import os
 from glob import glob
-from setuptools import setup, find_packages # เพิ่ม find_packages
+from setuptools import setup, find_packages
 
 package_name = 'my_robot_description'
 
 setup(
     name=package_name,
     version='0.0.1',
-    packages=find_packages(include=[package_name, package_name + '.*']), # บอกให้ setuptools ค้นหาและติดตั้ง Python package
+    packages=find_packages(include=[package_name, package_name + '.*']),
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
@@ -17,6 +17,7 @@ setup(
         (os.path.join('share', package_name, 'urdf'), glob(os.path.join('urdf', '*.xacro'))),
         # รวมไฟล์ RViz config (ถ้ามี)
         (os.path.join('share', package_name, 'rviz'), glob(os.path.join('rviz', '*.rviz'))),
+        # ✅ ลบบรรทัดนี้ออกไป: (os.path.join('share', package_name, 'worlds'), glob(os.path.join('worlds', '*.sdf'))),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -27,7 +28,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'laser_to_sonar = my_robot_description.laser_to_sonar_node:main' # entry_point นี้ถูกต้องแล้ว
+            'laser_to_sonar = my_robot_description.laser_to_sonar_node:main'
         ],
     },
 )

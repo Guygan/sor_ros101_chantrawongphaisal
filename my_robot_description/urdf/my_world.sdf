@@ -1,0 +1,22 @@
+<sdf version="1.6">
+  <world name="default">
+
+    <!-- แสง -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- พื้น -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- ใส่หุ่นยนต์ -->
+    <include>
+      <uri>model://my_robot</uri>
+      <name>my_robot</name>
+      <pose>0 0 0.05 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
