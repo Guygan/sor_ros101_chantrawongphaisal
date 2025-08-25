@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ======================= ปลั๊กอินทั่วไป (General Plugins) ======================= -->
+  <gazebo>
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+    </plugin>
+  </gazebo>
+
+  <!-- ======================= การตั้งค่าเซ็นเซอร์ Lidar ======================= -->
+  <gazebo reference="lidar_link">
+    <sensor name="lidar" type="gpu_lidar">
+      <topic>/scan</topic>
+      <update_rate>10</update_rate>
+      <visualize>true</visualize>
+      
+      <!-- ## FIX: Restructured to match SDF standard and remove warnings ## -->
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>12.0</max>
+        </range>
+      </lidar>
+
+    </sensor>
+  </gazebo>
+
+  <!-- ======================= ปลั๊กอินสำหรับสถานะข้อต่อ (Joint States) ======================= -->
+  <gazebo>
+    <plugin
+      filename="gz-sim-joint-state-publisher-system"
+      name="gz::sim::systems::JointStatePublisher">
+    </plugin>
+  </gazebo>
+
+  <!-- ======================= ปลั๊กอินสำหรับขับเคลื่อน (Drive Plugin) ======================= -->
+  <gazebo>
+    <plugin
+      filename="gz-sim-diff-drive-system"
+      name="gz::sim::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>${body_width + 2*track_width + wheel_thickness}</wheel_separation>
+      <wheel_radius>${wheel_radius}</wheel_radius>
+      <topic>cmd_vel</topic>
+    </plugin>
+  </gazebo>
+
+</robot>
