@@ -11,13 +11,11 @@ setup(
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        # รวมไฟล์ launch ทั้งหมด
-        (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.py'))),
-        # รวมไฟล์ xacro ทั้งหมด
-        (os.path.join('share', package_name, 'urdf'), glob(os.path.join('urdf', '*.xacro'))),
-        # รวมไฟล์ RViz config (ถ้ามี)
-        (os.path.join('share', package_name, 'rviz'), glob(os.path.join('rviz', '*.rviz'))),
-        # ✅ ลบบรรทัดนี้ออกไป: (os.path.join('share', package_name, 'worlds'), glob(os.path.join('worlds', '*.sdf'))),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'urdf'), glob('urdf/*.xacro')),
+        (os.path.join('share', package_name, 'rviz'), glob('rviz/*.rviz')),
+        (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
+        (os.path.join('share', package_name, 'maps'), glob('maps/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
