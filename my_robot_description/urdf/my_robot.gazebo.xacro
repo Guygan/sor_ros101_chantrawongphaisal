@@ -3,9 +3,7 @@
 
   <!-- ======================= ปลั๊กอินทั่วไป (General Plugins) ======================= -->
   <gazebo>
-    <plugin
-      filename="gz-sim-sensors-system"
-      name="gz::sim::systems::Sensors">
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
     </plugin>
   </gazebo>
 
@@ -15,7 +13,7 @@
       <topic>/scan</topic>
       <update_rate>10</update_rate>
       <visualize>true</visualize>
-      
+
       <!-- ## FIX: Restructured to match SDF standard and remove warnings ## -->
       <lidar>
         <scan>
@@ -37,22 +35,22 @@
 
   <!-- ======================= ปลั๊กอินสำหรับสถานะข้อต่อ (Joint States) ======================= -->
   <gazebo>
-    <plugin
-      filename="gz-sim-joint-state-publisher-system"
-      name="gz::sim::systems::JointStatePublisher">
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
     </plugin>
   </gazebo>
 
   <!-- ======================= ปลั๊กอินสำหรับขับเคลื่อน (Drive Plugin) ======================= -->
   <gazebo>
-    <plugin
-      filename="gz-sim-diff-drive-system"
-      name="gz::sim::systems::DiffDrive">
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
       <left_joint>left_wheel_joint</left_joint>
       <right_joint>right_wheel_joint</right_joint>
       <wheel_separation>${body_width + 2*track_width + wheel_thickness}</wheel_separation>
       <wheel_radius>${wheel_radius}</wheel_radius>
       <topic>cmd_vel</topic>
+      <publish_odom_tf>true</publish_odom_tf>
+
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_footprint</child_frame_id>
     </plugin>
   </gazebo>
 

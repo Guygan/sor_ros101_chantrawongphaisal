@@ -33,7 +33,7 @@ def generate_launch_description():
         executable='robot_state_publisher',
         name='robot_state_publisher',
         output='screen',
-        parameters=[{'robot_description': robot_description_content}]
+        parameters=[{'use_sim_time': True, 'robot_description': robot_description_content}]
     )
 
     robot_name = 'my_robot'
@@ -49,13 +49,17 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
+              '/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
             '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
             '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
             '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
+            '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry'
         ],
         remappings=[
             (f'/model/{robot_name}/cmd_vel', '/cmd_vel'),
+            (f'/model/{robot_name}/odometry', '/odom')
         ],
+        parameters=[{'use_sim_time': True}],
         output='screen'
     )
 

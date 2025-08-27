@@ -10,7 +10,7 @@
   <xacro:property name="track_height" value="0.18"/>
   <xacro:property name="lidar_radius" value="0.025"/>
   <xacro:property name="lidar_height" value="0.03"/>
-  <xacro:property name="wheel_radius" value="0.025"/>
+  <xacro:property name="wheel_radius" value="0.021"/>
   <xacro:property name="wheel_thickness" value="0.001"/>
   <xacro:property name="wheel_z_offset" value="-0.07"/>
   <xacro:property name="top_plate_length" value="0.5"/>
