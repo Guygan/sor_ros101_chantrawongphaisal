@@ -9,7 +9,6 @@
   <!-- ======================= การตั้งค่าเซ็นเซอร์ Lidar ======================= -->
   <gazebo reference="lidar_link">
     <sensor name="lidar" type="gpu_lidar">
-      <!-- ✅ กำหนดชื่อ topic ให้ชัดเจน -->
       <topic>scan</topic>
       <update_rate>10</update_rate>
       <visualize>true</visualize>
@@ -33,7 +32,6 @@
   <!-- ======================= ปลั๊กอินสำหรับสถานะข้อต่อ (Joint States) ======================= -->
   <gazebo>
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-        <!-- ✅ กำหนดชื่อ topic ให้ชัดเจน -->
         <topic>joint_states</topic>
     </plugin>
   </gazebo>
@@ -45,8 +43,6 @@
       <right_joint>right_wheel_joint</right_joint>
       <wheel_separation>${body_width + 2*track_width + wheel_thickness}</wheel_separation>
       <wheel_radius>${wheel_radius}</wheel_radius>
-      
-      <!-- ✅ กำหนดชื่อ topic ทั้งหมดให้ชัดเจน -->
       <topic>cmd_vel</topic>
       <odometry_topic>odom</odometry_topic>
       <tf_topic>tf</tf_topic>
