@@ -23,6 +23,13 @@ def generate_launch_description():
         parameters=[
           os.path.join(slam_toolbox_pkg_dir, 'config', 'mapper_params_online_async.yaml'),
           {'use_sim_time': True}
+        ],
+        # ✅ เพิ่ม remappings เพื่อความแน่นอน
+        remappings=[
+            ('/scan', 'scan'),
+            ('/tf', 'tf'),
+            ('/tf_static', 'tf_static'),
+            ('/map', 'map')
         ]
     )
 
