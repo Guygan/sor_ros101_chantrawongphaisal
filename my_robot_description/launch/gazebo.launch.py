@@ -40,22 +40,30 @@ def generate_launch_description():
     spawn_robot = Node(
         package='ros_gz_sim',
         executable='create',
+        # แก้ไข 'robot_ฟหกฟdescription' เป็น 'robot_description'
         arguments=['-topic', 'robot_description', '-name', robot_name],
         output='screen'
     )
 
-    # --- 6. สร้าง Bridge (ฉบับที่ทำงานสอดคล้องกับ .xacro) ---
+    # สร้าง Bridge โดยใช้ Absolute Path เพื่อหลีกเลี่ยงปัญหา Environment
+    # *** แก้ไขส่วนนี้ ***
+    bridge_config_path = '/home/guygan/ros2_ws/src/my_robot_description/config/gz_bridge.yaml'
+
+
     gz_ros_bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
-            'scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
+            # 'scan' ถูกจัดการในไฟล์ config แล้ว
             'odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
             'tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
             'joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
             'cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
         ],
-        parameters=[{'use_sim_time': True}],
+        parameters=[{
+            'config_file': bridge_config_path,
+            'use_sim_time': True
+        }],
         output='screen'
     )
 
