@@ -1,0 +1,31 @@
+# my_robot_description/config/my_slam_params.yaml
+# --- ฉบับแก้ไข QoS ---
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: True
+
+    # -- ตั้งค่า Frame ให้ถูกต้องและชัดเจน --
+    odom_frame: "odom"
+    map_frame: "map"
+    base_frame: "base_footprint"
+    scan_topic: "/scan"
+
+    # -- พารามิเตอร์ที่สำคัญที่สุด --
+    transform_timeout: 1.0
+
+    # -- vvvvv ส่วนที่เพิ่มเข้ามาใหม่ vvvvv --
+    # บังคับให้ slam_toolbox ใช้ QoS รูปแบบ Sensor Data ในการรับข้อมูล /scan
+    # เพื่อให้สื่อสารกับ Bridge ได้อย่างถูกต้อง
+    qos_scan:
+      reliability: "best_effort"
+      history: "keep_last"
+      depth: 5
+    # -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ --
+
+    # -- พารามิเตอร์มาตรฐานอื่นๆ --
+    solver_plugin: "solver_plugins::CeresSolver"
+    ceres_linear_solver: "SPARSE_NORMAL_CHOLESKY"
+    ceres_preconditioner: "SCHUR_JACOBI"
+    ceres_trust_strategy: "LEVENBERG_MARQUARDT"
+
+    mode: "mapping"
