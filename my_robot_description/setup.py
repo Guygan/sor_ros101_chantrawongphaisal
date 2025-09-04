@@ -25,8 +25,9 @@ setup(
     license='MIT',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [
-            'laser_to_sonar = my_robot_description.laser_to_sonar_node:main',
-        ],
-    },
+    'console_scripts': [
+        'laser_to_sonar = my_robot_description.laser_to_sonar_node:main',
+        'frame_fixer = my_robot_description.frame_fixer:main',  
+    ],
+},
 )

@@ -1,0 +1,27 @@
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+    - Class: rviz_default_plugins/RobotModel
+      Enabled: true
+      Name: RobotModel
+      Robot Description: robot_description
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Name: TF
+    - Class: rviz_default_plugins/LaserScan
+      Enabled: true
+      Name: LaserScan
+      Topic: /scan_corrected 
+      Size (m): 0.05
+    - Class: rviz_default_plugins/Map
+      Enabled: true
+      Name: Map
+      Topic: /map
+  Enabled: true
+  Global Options:
+    Fixed Frame: map
+    Background Color: 48; 48; 48
+  Name: root
