@@ -1,10 +1,11 @@
+#my_slam_params.yaml
 slam_toolbox:
   ros__parameters:
     use_sim_time: True
     odom_frame: "odom"
     map_frame: "map"
     base_frame: "base_footprint"
-    scan_topic: "/scan"
+    scan_topic: "/scan_corrected"
     qos_scan:
       reliability: "best_effort"
       history: "keep_last"

@@ -26,21 +26,33 @@
 
 
   <!-- ======================= สีของวัสดุ (Materials) ======================= -->
-  <material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material>
-  <material name="yellow"><color rgba="1.0 1.0 0.0 1.0"/></material>
-  <material name="red"><color rgba="1 0 0 1"/></material>
-  <material name="white"><color rgba="1.0 1.0 1.0 1.0"/></material>
+  <material name="black">
+    <color rgba="0.1 0.1 0.1 1.0"/>
+  </material>
+  <material name="yellow">
+    <color rgba="1.0 1.0 0.0 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
 
   <!-- ======================= โครงสร้างหุ่นยนต์ (Robot Structure) ======================= -->
   <link name="base_footprint"/>
 
   <link name="base_link">
     <visual>
-      <geometry><box size="${body_length} ${body_width} ${body_height}"/></geometry>
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
       <material name="yellow"/>
     </visual>
     <collision>
-      <geometry><box size="${body_length*0.9} ${body_width*0.9} ${body_height*0.9}"/></geometry>
+      <geometry>
+        <box size="${body_length*0.9} ${body_width*0.9} ${body_height*0.9}"/>
+      </geometry>
     </collision>
     <inertial>
       <mass value="5.0"/>
@@ -56,7 +68,9 @@
   <xacro:macro name="track_housing" params="prefix side">
     <link name="${prefix}_track">
       <visual>
-        <geometry><box size="${track_length} ${track_width} ${track_height}"/></geometry>
+        <geometry>
+          <box size="${track_length} ${track_width} ${track_height}"/>
+        </geometry>
         <material name="black"/>
       </visual>
     </link>
@@ -73,18 +87,23 @@
     <link name="${prefix}_wheel">
       <visual>
         <origin rpy="${pi/2} 0 0"/>
-        <geometry><cylinder radius="${wheel_radius}" length="${wheel_thickness}"/></geometry>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
+        </geometry>
         <material name="white"/>
       </visual>
       <collision>
         <origin rpy="${pi/2} 0 0"/>
-        <geometry><cylinder radius="${wheel_radius}" length="${wheel_thickness}"/></geometry>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
+        </geometry>
       </collision>
       <inertial>
         <mass value="0.5"/>
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
     </link>
+
     <joint name="${prefix}_wheel_joint" type="continuous">
       <parent link="base_link"/>
       <child link="${prefix}_wheel"/>
@@ -92,16 +111,20 @@
       <axis xyz="0 1 0"/>
     </joint>
   </xacro:macro>
-  <xacro:drive_wheel prefix="left"  side="1"/>
+  <xacro:drive_wheel prefix="left" side="1"/>
   <xacro:drive_wheel prefix="right" side="-1"/>
 
   <link name="top_plate">
     <visual>
-      <geometry><box size="${top_plate_length} ${top_plate_width} ${top_plate_thickness}"/></geometry>
+      <geometry>
+        <box size="${top_plate_length} ${top_plate_width} ${top_plate_thickness}"/>
+      </geometry>
       <material name="yellow"/>
     </visual>
     <collision>
-      <geometry><box size="${top_plate_length} ${top_plate_width} ${top_plate_thickness}"/></geometry>
+      <geometry>
+        <box size="${top_plate_length} ${top_plate_width} ${top_plate_thickness}"/>
+      </geometry>
     </collision>
     <inertial>
       <mass value="0.5"/>
@@ -116,11 +139,15 @@
 
   <link name="lidar_stand">
     <visual>
-      <geometry><box size="${lidar_stand_length} ${lidar_stand_width} ${lidar_stand_height}"/></geometry>
+      <geometry>
+        <box size="${lidar_stand_length} ${lidar_stand_width} ${lidar_stand_height}"/>
+      </geometry>
       <material name="yellow"/>
     </visual>
     <collision>
-      <geometry><box size="${lidar_stand_length} ${lidar_stand_width} ${lidar_stand_height}"/></geometry>
+      <geometry>
+        <box size="${lidar_stand_length} ${lidar_stand_width} ${lidar_stand_height}"/>
+      </geometry>
     </collision>
     <inertial>
       <mass value="0.2"/>
@@ -136,11 +163,15 @@
   <!-- ## NEW: สร้าง Plate สำหรับวาง Lidar ## -->
   <link name="lidar_plate">
     <visual>
-      <geometry><box size="${lidar_plate_length} ${lidar_plate_width} ${lidar_plate_thickness}"/></geometry>
+      <geometry>
+        <box size="${lidar_plate_length} ${lidar_plate_width} ${lidar_plate_thickness}"/>
+      </geometry>
       <material name="yellow"/>
     </visual>
     <collision>
-      <geometry><box size="${lidar_plate_length} ${lidar_plate_width} ${lidar_plate_thickness}"/></geometry>
+      <geometry>
+        <box size="${lidar_plate_length} ${lidar_plate_width} ${lidar_plate_thickness}"/>
+      </geometry>
     </collision>
     <inertial>
       <mass value="0.1"/>
@@ -155,13 +186,20 @@
 
   <link name="lidar_link">
     <visual>
-      <geometry><cylinder radius="${lidar_radius}" length="${lidar_height}"/></geometry>
+      <geometry>
+        <cylinder radius="${lidar_radius}" length="${lidar_height}"/>
+      </geometry>
       <material name="red"/>
     </visual>
     <collision>
-      <geometry><cylinder radius="${lidar_radius}" length="${lidar_height}"/></geometry>
+      <geometry>
+        <cylinder radius="${lidar_radius}" length="${lidar_height}"/>
+      </geometry>
     </collision>
-    <inertial><mass value="0.1"/><inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/></inertial>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
   </link>
   <joint name="lidar_joint" type="fixed">
     <!-- ## FIX: ย้าย Lidar ไปยึดกับ Plate ที่สร้างขึ้นใหม่ ## -->

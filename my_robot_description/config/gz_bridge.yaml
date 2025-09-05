@@ -11,12 +11,9 @@
   ros_type_name: "sensor_msgs/msg/LaserScan"
   gz_type_name: "gz.msgs.LaserScan"
   direction: GZ_TO_ROS
-  frame_id_mappings:
-    - gz_frame_id: "my_robot/base_footprint/lidar_link"
-      ros_frame_id: "lidar_link"
-
+  
 # Odometry Data
-- gz_topic_name: "/odom"
+- gz_topic_name: "/model/my_robot/odometry"
   ros_topic_name: "/odom"
   ros_type_name: "nav_msgs/msg/Odometry"
   gz_type_name: "gz.msgs.Odometry"
