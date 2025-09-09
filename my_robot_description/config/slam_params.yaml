@@ -1,0 +1,30 @@
+# Parameters for SLAM Toolbox
+slam_toolbox:
+  ros__parameters:
+    # Basic configuration
+    use_sim_time: True
+    odom_frame: "odom"
+    map_frame: "map"
+    base_frame: "base_footprint"
+    scan_topic: "/scan_corrected"
+    mode: "mapping" # 'localization' or 'mapping'
+
+    # QoS for laser scan topic
+    qos_scan:
+      reliability: "reliable"
+      history: "keep_last"
+      depth: 5
+
+    # Other important parameters
+    transform_timeout: 2.0
+    minimum_travel_distance: 0.1
+    minimum_travel_heading: 0.1
+    max_laser_range: 10.0
+
+    # Matcher parameters (can be tuned for better performance)
+    matcher_params:
+      min_matches: 20
+      max_iterations: 10
+      max_correspondence_dist: 0.3
+      max_angular_correction_deg: 20.0
+      max_linear_correction: 0.5
