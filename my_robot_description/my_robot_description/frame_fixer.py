@@ -3,10 +3,6 @@ from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
 
 class FrameFixerNode(Node):
-    """
-    A node that subscribes to /scan, changes the frame_id,
-    and republishes the message to /scan_corrected.
-    """
     def __init__(self):
         super().__init__('scan_frame_fixer')
         self.publisher_ = self.create_publisher(LaserScan, '/scan_corrected', 10)

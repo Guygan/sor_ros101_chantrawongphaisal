@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
 
-  <!-- ======================= คุณสมบัติต่างๆ (Properties) ======================= -->
+  <!-- ======================= Properties ======================= -->
   <xacro:property name="body_length" value="0.35"/>
   <xacro:property name="body_width" value="0.3"/>
   <xacro:property name="body_height" value="0.2"/>
@@ -19,13 +19,14 @@
   <xacro:property name="lidar_stand_length" value="0.5"/>
   <xacro:property name="lidar_stand_width" value="0.3"/>
   <xacro:property name="lidar_stand_height" value="0.1"/>
-  <!-- ## NEW: คุณสมบัติสำหรับ Plate วาง Lidar ## -->
   <xacro:property name="lidar_plate_length" value="0.5"/>
   <xacro:property name="lidar_plate_width" value="0.5"/>
   <xacro:property name="lidar_plate_thickness" value="0.003"/>
+  <!-- ## NEW: IMU Box Size ## -->
+  <xacro:property name="imu_size" value="0.02"/>
 
 
-  <!-- ======================= สีของวัสดุ (Materials) ======================= -->
+  <!-- ======================= Materials ======================= -->
   <material name="black">
     <color rgba="0.1 0.1 0.1 1.0"/>
   </material>
@@ -39,7 +40,7 @@
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
 
-  <!-- ======================= โครงสร้างหุ่นยนต์ (Robot Structure) ======================= -->
+  <!-- ======================= Robot Structure ======================= -->
   <link name="base_footprint"/>
 
   <link name="base_link">
@@ -63,6 +64,30 @@
     <parent link="base_footprint"/>
     <child link="base_link"/>
     <origin xyz="0 0 ${wheel_radius - wheel_z_offset}"/>
+  </joint>
+
+  <!-- ## NEW: IMU Sensor Link and Joint ## -->
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="${imu_size} ${imu_size} ${imu_size}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${imu_size} ${imu_size} ${imu_size}"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0"/>
   </joint>
 
   <xacro:macro name="track_housing" params="prefix side">
@@ -160,7 +185,6 @@
     <origin xyz="0 0 ${top_plate_thickness/2 + lidar_stand_height/2}"/>
   </joint>
 
-  <!-- ## NEW: สร้าง Plate สำหรับวาง Lidar ## -->
   <link name="lidar_plate">
     <visual>
       <geometry>
@@ -202,7 +226,6 @@
     </inertial>
   </link>
   <joint name="lidar_joint" type="fixed">
-    <!-- ## FIX: ย้าย Lidar ไปยึดกับ Plate ที่สร้างขึ้นใหม่ ## -->
     <parent link="lidar_plate"/>
     <child link="lidar_link"/>
     <origin xyz="0 0 ${lidar_plate_thickness/2 + lidar_height/2}"/>

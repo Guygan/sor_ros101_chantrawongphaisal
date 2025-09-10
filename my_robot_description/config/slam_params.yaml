@@ -1,30 +1,35 @@
-# Parameters for SLAM Toolbox
+# Parameters for the SLAM Toolbox
+# This file is formatted for ROS 2 Jazzy Jalisco
 slam_toolbox:
   ros__parameters:
-    # Basic configuration
+    # Required Parameters
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_footprint 
+    scan_topic: /scan_corrected
+
+    # General Parameters
     use_sim_time: True
-    odom_frame: "odom"
-    map_frame: "map"
-    base_frame: "base_footprint"
-    scan_topic: "/scan_corrected"
-    mode: "mapping" # 'localization' or 'mapping'
+    resolution: 0.05
+    map_update_interval: 1.0 # In seconds
 
-    # QoS for laser scan topic
-    qos_scan:
-      reliability: "reliable"
-      history: "keep_last"
-      depth: 5
+    # Mode and Solver Parameters
+    mode: mapping # Can be 'mapping' or 'localization'
+    solver_plugin: "solver_plugins::CeresSolver"
+    
+    # Ceres Solver Options
+    ceres_solver_options:
+      use_nonmonotonic_steps: false
+      max_num_iterations: 50
+      num_threads: 1
 
-    # Other important parameters
-    transform_timeout: 2.0
-    minimum_travel_distance: 0.1
-    minimum_travel_heading: 0.1
-    max_laser_range: 10.0
+    # Map Data
+    map_file_name: ""
+    map_start_at_dock: false
+    
+    # Other settings
+    debug_logging: false
+    throttle_scans: 1
+    transform_publish_period: 0.05 # 20 Hz
+    map_visualization_rate: 0.5 # Hz
 
-    # Matcher parameters (can be tuned for better performance)
-    matcher_params:
-      min_matches: 20
-      max_iterations: 10
-      max_correspondence_dist: 0.3
-      max_angular_correction_deg: 20.0
-      max_linear_correction: 0.5
