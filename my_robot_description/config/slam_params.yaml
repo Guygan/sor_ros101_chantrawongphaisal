@@ -1,35 +1,32 @@
-# Parameters for the SLAM Toolbox
-# This file is formatted for ROS 2 Jazzy Jalisco
 slam_toolbox:
   ros__parameters:
     # Required Parameters
     odom_frame: odom
     map_frame: map
-    base_frame: base_footprint 
+    # This is the critical fix:
+    base_frame: base_footprint   # It MUST be 'base_footprint', not 'my_robot/base_footprint'
+    
+    # This must match the output of your frame_fixer.py
     scan_topic: /scan_corrected
 
     # General Parameters
     use_sim_time: True
     resolution: 0.05
-    map_update_interval: 1.0 # In seconds
+    map_update_interval: 1.0
 
     # Mode and Solver Parameters
-    mode: mapping # Can be 'mapping' or 'localization'
+    mode: mapping
     solver_plugin: "solver_plugins::CeresSolver"
     
-    # Ceres Solver Options
+    # Other settings...
     ceres_solver_options:
       use_nonmonotonic_steps: false
       max_num_iterations: 50
       num_threads: 1
-
-    # Map Data
     map_file_name: ""
     map_start_at_dock: false
-    
-    # Other settings
     debug_logging: false
     throttle_scans: 1
-    transform_publish_period: 0.05 # 20 Hz
-    map_visualization_rate: 0.5 # Hz
+    transform_publish_period: 0.05
+    map_visualization_rate: 0.5
 
