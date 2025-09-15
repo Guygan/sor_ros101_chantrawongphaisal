@@ -1,41 +1,30 @@
-# Configuration for robot_localization EKF node
 ekf_filter_node:
   ros__parameters:
-    # GENERAL PARAMETERS
     frequency: 30.0
     sensor_timeout: 0.1
     two_d_mode: true
+    publish_tf: true
 
-    # FRAME PARAMETERS
-    # Make sure these match your robot's frames
     map_frame: map
     odom_frame: odom
-    # --- FIX: The name must match the robot's TF prefix from URDF/Gazebo ---
-    base_link_frame: my_robot/base_footprint
+    base_link_frame: base_footprint   # <-- ต้องตรงกับ TF chain (คุณเลือก base_footprint)
     world_frame: odom
 
-    # INPUT SENSOR CONFIGURATION
-    # We are fusing odometry from Gazebo's diff_drive plugin and the IMU sensor
-    
-    # Odometry from Gazebo (Topic: /odom)
     odom0: /odom
-    odom0_config: [true,  true,  false,   # [X, Y, Z] position
-                   false, false, true,    # [Roll, Pitch, Yaw] orientation
-                   true,  false, false,   # [X, Y, Z] linear velocity
-                   false, false, true,    # [Roll, Pitch, Yaw] angular velocity
-                   false, false, false]   # [X, Y, Z] linear acceleration
+    odom0_config: [true,  true,  false,
+                   false, false, true,
+                   true,  false, false,
+                   false, false, true,
+                   false, false, false]
     odom0_differential: false
 
-    # IMU from Gazebo (Topic: /imu)
     imu0: /imu
-    imu0_config: [false, false, false,  # [X, Y, Z] position
-                  true,  true,  true,   # [Roll, Pitch, Yaw] orientation
-                  false, false, false,  # [X, Y, Z] linear velocity
-                  true,  true,  true,   # [Roll, Pitch, Yaw] angular velocity
-                  true,  true,  false]  # [X, Y, Z] linear acceleration
+    imu0_config: [false, false, false,
+                  true,  true,  true,
+                  false, false, false,
+                  true,  true,  true,
+                  true,  true,  false]
     imu0_differential: false
     imu0_remove_gravitational_acceleration: true
 
-    # OUTPUT PARAMETERS
     print_diagnostics: true
-
